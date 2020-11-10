@@ -135,8 +135,6 @@ RUN    apk -U add \
 # Start suricata
 STOPSIGNAL SIGINT
 
-# CMD SURICATA_CAPTURE_FILTER=$(update.sh $OINKCODE) && exec suricata -v -F $SURICATA_CAPTURE_FILTER -i $IFNAME --set vars.address-groups.HOME_NET=${HOME_NET}
-# Sleeeeeeeeeeeeeeeeeeeeeeeeeeep
-CMD ["sleep infinity"]
+CMD SURICATA_CAPTURE_FILTER=$(update.sh $OINKCODE) && exec suricata -v -F $SURICATA_CAPTURE_FILTER -i $IFNAME --set vars.address-groups.HOME_NET=${HOME_NET}
 
 
